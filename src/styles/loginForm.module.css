@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  width: 100%; /* 1 */
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 375px;
+  height: 250px;
+}
+.title {
+  color: var(--second-gray);
+}
+.subtitle {
+  color: var(--third-gray);
+}
+.inputName {
+  border-radius: 5px;
+  height: 40px;
+  background-color: var(--third-gray);
+  border: none;
+  color: var(--fourth-gray);
+  padding-left: 20px;
+}
+.inputName::placeholder {
+  color: var(--fourth-gray);
+}
+.buttonLets {
+  border-radius: 5px;
+  height: 40px;
+  background-color: var(--button-color);
+  border: none;
+  color: var(--fourth-gray);
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+}
