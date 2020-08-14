@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import loginForm from "../styles/loginForm.module.css";
-const LoginForm = () => {
+import { PropagateLoader } from "react-spinners";
+
+const LoginForm = ({ createGame, loading }) => {
+  const inputRef = useRef(null);
+
   return (
     <div className={loginForm.container}>
       <div className={loginForm.loginContainer}>
@@ -13,12 +17,15 @@ const LoginForm = () => {
             className={loginForm.inputName}
             type="text"
             placeholder="NAME"
-            value=""
+            ref={inputRef}
           />
           <input
             className={loginForm.buttonLets}
             type="button"
             value="LETS PLAY"
+            onClick={() => {
+              createGame(inputRef.current.value);
+            }}
           />
         </div>
       </div>
