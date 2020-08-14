@@ -19,22 +19,22 @@
   color: var(--third-gray);
 }
 .inputName {
-  border-radius: 5px;
+  border-radius: var(--borders);
   height: 40px;
   background-color: var(--third-gray);
-  border: none;
   color: var(--fourth-gray);
   padding-left: 20px;
+  border: none;
 }
 .inputName::placeholder {
   color: var(--fourth-gray);
 }
 .buttonLets {
-  border-radius: 5px;
+  border-radius: var(--borders);
   height: 40px;
   background-color: var(--button-color);
-  border: none;
   color: var(--fourth-gray);
+  border: none;
 }
 .inputContainer {
   display: flex;
