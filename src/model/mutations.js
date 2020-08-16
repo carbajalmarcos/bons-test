@@ -29,34 +29,34 @@ export const CREATE_GAME = gql`
     }
   }
 `;
-const NEXT_TURN = gql`
-  mutation nextTurn($gameId: String!, $cardId: String) {
+export const NEXT_TURN = gql`
+  mutation nextTurn($gameId: ID!, $cardId: ID) {
     nextTurn(input: { gameId: $gameId, cardId: $cardId }) {
       game {
-        currentTurn
         id
+        currentTurn
         maxTurns
+        turnsLeft
         monster {
           hp
           id
-          image
           maxHp
           name
+          image
           shield
         }
         player {
+          hp
+          id
+          maxHp
+          name
+          shield
           cards {
             effect
             id
             value
           }
-          hp
-          id
-          maxHp
-          name
-          shield
         }
-        turnsLeft
       }
       monsterEffect {
         effect

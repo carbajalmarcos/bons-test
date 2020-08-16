@@ -19,11 +19,28 @@
 }
 .content {
   width: 80%;
-  height: 75%;
+  height: 70%;
   border-style: solid;
   border-width: 2px;
   border-color: var(--third-gray);
   border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.contentItem {
+  color: var(--fourth-gray);
+}
+.contentItem p:nth-child(1) {
+  font-size: 12px;
+  margin: 0;
+  font-weight: 300;
+}
+.contentItem p:nth-child(2) {
+  font-size: 30px;
+  margin: 0;
 }
 .button {
   border-radius: var(--borders);

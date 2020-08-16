@@ -1,8 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import loginForm from "../styles/loginForm.module.css";
-import { PropagateLoader } from "react-spinners";
 
-const LoginForm = ({ createGame, loading }) => {
+const LoginForm = ({ createGame }) => {
   const inputRef = useRef(null);
 
   return (

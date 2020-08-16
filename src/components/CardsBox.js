@@ -1,20 +1,24 @@
 import React from "react";
 import cardsBox from "../styles/cardsBox.module.css";
-const CardsBox = () => {
+const CardsBox = ({ cards, setCard, selected }) => {
   return (
     <div className={cardsBox.container}>
-      <div className={cardsBox.card}>
-        <div className={cardsBox.cardFace}></div>
-        <p className={cardsBox.cardName}>Healt</p>
-      </div>
-      <div className={cardsBox.card}>
-        <div className={cardsBox.cardFace}>:D</div>
-        <p className={cardsBox.cardName}>Healt</p>
-      </div>
-      <div className={cardsBox.card}>
-        <div className={cardsBox.cardFace}></div>
-        <p className={cardsBox.cardName}>Healt</p>
-      </div>
+      {cards.map((value, index) => {
+        return (
+          <div
+            className={
+              selected !== value.id ? cardsBox.card : cardsBox.cardSelected
+            }
+            key={index}
+            onClick={() => {
+              setCard(value.id);
+            }}
+          >
+            <div className={cardsBox.cardFace}></div>
+            <p className={cardsBox.cardName}>{value.effect} </p>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "flow-bin": "^0.131.0",
     "graphql": "^15.3.0",
     "postcss-cli": "^7.1.1",
     "react": "^16.13.1",
@@ -19,7 +20,8 @@
     "start": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts start",
     "build": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts build",
     "test": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow"
   },
   "eslintConfig": {
     "extends": "react-app"

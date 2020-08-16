@@ -1,8 +1,9 @@
-import React, { forwardRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import LogingForm from "../components/LoginForm";
-import { CREATE_GAME } from "../model/mutations";
 import { useCreateGame } from "../model/customGqlHooks";
 import { useHistory } from "react-router-dom";
+import Modal from "../components/Modal";
+import Spinner from "../components/Spinner";
 
 const Login = () => {
   const [createGame, { data, loading, error }] = useCreateGame();
@@ -18,7 +19,15 @@ const Login = () => {
     }
   }, [data, loading]);
 
-  return <LogingForm createGame={handleCreateGame} loading={loading} />;
+  if (error) {
+    return <Modal content={<p>{error.message}</p>} />;
+  }
+  return (
+    <>
+      {loading && <Spinner />}
+      <LogingForm createGame={handleCreateGame} />;
+    </>
+  );
 };
 
 export default Login;

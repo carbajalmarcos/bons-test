@@ -17,6 +17,7 @@
 }
 .subtitle {
   color: var(--third-gray);
+  font-weight: 500;
 }
 .inputName {
   border-radius: var(--borders);
