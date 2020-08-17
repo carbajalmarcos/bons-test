@@ -1,4 +1,4 @@
-[ignore]
+spo[ignore]
 .*/node_modules/.*
 [include]
 

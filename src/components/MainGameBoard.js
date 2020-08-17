@@ -1,18 +1,25 @@
+// @flow
 import React from "react";
 import mainBoard from "../styles/mainGameBoard.module.css";
 import CardsBox from "./CardsBox";
 import EntityPlayer from "./EntityPlayer";
 import TurnDashboard from "./TurnDashboard";
 import HorrorEffect from "./HorrorEffect";
-
+import { Game } from "../utils/types";
+type Props = {
+  game: Game,
+  nextTurn: Function,
+  setCardIdSelected: Function,
+  cardIdSelected: string,
+  hasHorror: boolean,
+};
 const MaingGameBoard = ({
   game,
   nextTurn,
   setCardIdSelected,
   cardIdSelected,
   hasHorror,
-  gameEnded,
-}) => {
+}: Props) => {
   return (
     <div className={mainBoard.container}>
       <div className={mainBoard.wrapper}>

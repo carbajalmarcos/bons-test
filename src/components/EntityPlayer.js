@@ -1,12 +1,18 @@
+// @flow
 import React from "react";
 import entityPlayer from "../styles/entityPlayer.module.css";
+import { Player, Monster } from "../utils/types";
 
-const EntityPlayer = ({ data }) => {
-  const { maxHp, shield, hp, name } = data;
+export type Props = {
+  data: Player | Monster,
+};
+
+const EntityPlayer = ({ data }: Props) => {
+  const { name, image, hp, maxHp, shield } = data;
   return (
     <div className={entityPlayer.container}>
       <div className={entityPlayer.healthPoints}>
-        <div className={entityPlayer.image}></div>
+        <div className={entityPlayer.image}>{<img src={image} />}</div>
         <div className={entityPlayer.hpScore}>
           <h3>{name}</h3>
           <p>

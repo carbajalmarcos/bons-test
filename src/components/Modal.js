@@ -1,7 +1,12 @@
+// @flow
 import React from "react";
 import modal from "../styles/modal.module.css";
 
-const Modal = ({ content, onClose }) => {
+type Props = {
+  content:Object, 
+  onClose: Function,
+};
+const Modal = ({ content, onClose }: Props) => {
   return (
     <div className={modal.modal}>
       <div className={modal.modalContent}>

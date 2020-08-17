@@ -1,7 +1,13 @@
+// @flow
 import React from "react";
 import turnDashboard from "../styles/turnDashboard.module.css";
 
-const TurnDashboard = ({ current, left, nextTurn }) => {
+type Props = {
+  current: number,
+  left: number,
+  nextTurn: Function,
+};
+const TurnDashboard = ({ current, left, nextTurn }: Props) => {
   return (
     <div className={turnDashboard.container}>
       <div className={turnDashboard.header}>

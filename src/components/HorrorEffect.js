@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import horrorEffect from "../styles/horrorEffect.module.css";
 const HorrorEffect = () => {

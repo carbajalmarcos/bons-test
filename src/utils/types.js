@@ -1,30 +1,27 @@
-// @flow
 export type Game = {
-  id: ID,
+  id: string,
   currentTurn: number,
   maxTurns: number,
   turnsLeft: number,
   player: Player,
   monster: Monster,
 };
-export type Player = {
-  id: ID,
+export type Entity = {
+  id: string,
   name: string,
   hp: number,
   maxHp: number,
   shield: number,
-  cards: [Card],
+  // cards: [Card],
 };
 export type Card = {
-  id: ID,
+  id: string,
   value: number,
   effect: string,
 };
-export type Monster = {
-  id: ID,
-  name: string,
-  hp: number,
-  maxHp: number,
-  shield: number,
-  image: number,
+export type Player = Entity & {
+  cards: [Card],
+};
+export type Monster = Entity & {
+  image: string,
 };

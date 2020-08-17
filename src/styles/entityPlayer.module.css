@@ -10,6 +10,7 @@
   height: 100%;
   border-radius: var(--borders);
   display: flex;
+  align-items: center;
 }
 .hpScore {
   width: 60%;
@@ -40,10 +41,13 @@
   background-color: var(--second-gray);
   border-radius: var(--borders);
 }
+.image img {
+  max-width: 100%;
+  min-width: 100%;
+}
 .shield {
   width: 40%;
   background-color: var(--second-gray);
-  height: 100%;
   border-radius: var(--borders);
   display: flex;
   justify-content: center;

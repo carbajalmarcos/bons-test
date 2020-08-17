@@ -8,7 +8,6 @@ import Spinner from "../components/Spinner";
 
 const Gameboard = () => {
   const { loading: queryLoading, error: queryError, data } = useGetGame();
-
   const [cardIdSelected, setCardIdSelected] = useState("");
   const history = useHistory();
   const [
@@ -44,7 +43,6 @@ const Gameboard = () => {
       return;
     }
   }, [data]);
-
   //if data is undefined then redirect to login
   useEffect(() => {
     if (!data) {
@@ -60,6 +58,7 @@ const Gameboard = () => {
         content={
           <p>{mutationError ? mutationError.message : queryError.message}</p>
         }
+        onClose={endGame}
       />
     );
   }

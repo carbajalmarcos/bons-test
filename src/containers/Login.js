@@ -13,6 +13,10 @@ const Login = () => {
     createGame({ variables: { name } });
   };
 
+  const handleOnclose = () => {
+    history.push("/");
+  };
+
   useEffect(() => {
     if (data && !loading) {
       history.push("gameboard");
@@ -20,7 +24,7 @@ const Login = () => {
   }, [data, loading]);
 
   if (error) {
-    return <Modal content={<p>{error.message}</p>} />;
+    return <Modal content={<p>{error.message}</p>} onClose={handleOnclose} />;
   }
   return (
     <>

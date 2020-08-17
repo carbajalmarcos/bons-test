@@ -1,6 +1,14 @@
+// @flow
 import React from "react";
 import cardsBox from "../styles/cardsBox.module.css";
-const CardsBox = ({ cards, setCard, selected }) => {
+import { Card } from "../utils/types";
+
+type Props = {
+  cards: [Card],
+  setCard: Function,
+  selected: string,
+};
+const CardsBox = ({ cards, setCard, selected }: Props) => {
   return (
     <div className={cardsBox.container}>
       {cards.map((value, index) => {

@@ -1,8 +1,13 @@
-import React, { useRef } from "react";
+// @flow
+import React, { useState } from "react";
 import loginForm from "../styles/loginForm.module.css";
 
-const LoginForm = ({ createGame }) => {
-  const inputRef = useRef(null);
+type Props = {
+  createGame: Function,
+};
+
+const LoginForm = ({ createGame }: Props) => {
+  const [name, setName] = useState("");
 
   return (
     <div className={loginForm.container}>
@@ -16,14 +21,17 @@ const LoginForm = ({ createGame }) => {
             className={loginForm.inputName}
             type="text"
             placeholder="NAME"
-            ref={inputRef}
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
           />
           <input
             className={loginForm.buttonLets}
             type="button"
             value="LETS PLAY"
             onClick={() => {
-              createGame(inputRef.current.value);
+              if (name.trim().length !== 0) createGame(name);
             }}
           />
         </div>
