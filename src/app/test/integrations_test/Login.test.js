@@ -56,4 +56,38 @@ describe("app flow", () => {
     // expect(spinner.type().name).toEqual("Spinner");
     expect(wrapper.children().debug()).not.toContain("Spinner");
   });
+
+  test("loding test", async () => {
+    const loginMutationMock = [
+      {
+        request: {
+          query: CREATE_GAME,
+          variables: {
+            name: "marcos",
+          },
+        },
+        result: () => {
+          return {
+            data: createGameMock,
+          };
+        },
+      },
+    ];
+
+    const wrapper = setup(loginMutationMock);
+    const input = findByTestAttr(wrapper, "login-name");
+    const mockEvent = { target: { value: "marcos" } };
+
+    input.first().simulate("change", mockEvent);
+
+    const element = findByTestAttr(wrapper, "login-button");
+    element.first().simulate("click");
+
+    // let spinner = findByTestAttr(wrapper, "login-spinner");
+    // expect(spinner.type().name).toEqual("Spinner");
+    expect(wrapper.children().debug()).toContain("Spinner");
+    await new Promise((resolver) => setTimeout(resolver, 0));
+    wrapper.update();
+    expect(wrapper.children().debug()).not.toContain("Spinner");
+  });
 });
