@@ -5,8 +5,7 @@ import { findByTestAttr } from "../testUtils";
 import Routes from "../../Routes";
 import { MockedProvider } from "@apollo/react-testing";
 import { createGameMock } from "../mocks";
-import { CREATE_GAME } from "../../model/mutations";
-import wait from "waait";
+import { CREATE_GAME } from "../../../model/mutations";
 Enzyme.configure({
   adapter: new EnzymeAdapter(),
 });
