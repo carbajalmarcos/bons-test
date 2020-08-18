@@ -15,7 +15,6 @@ export const useCreateGame = () => {
 export const useNextTurn = () => {
   return useMutation(NEXT_TURN, {
     update(cache, { data: { nextTurn } }) {
-      console.log(nextTurn);
       cache.writeQuery({
         query: GET_GAME,
         data: { ...nextTurn },
