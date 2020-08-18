@@ -6,6 +6,7 @@ import Routes from "../../Routes";
 import { MockedProvider } from "@apollo/react-testing";
 import { createGameMock } from "../mocks";
 import { CREATE_GAME } from "../../model/mutations";
+import wait from "waait";
 Enzyme.configure({
   adapter: new EnzymeAdapter(),
 });
@@ -56,7 +57,7 @@ describe("some of testing to Login flow", () => {
     expect(wrapper.children().debug()).not.toContain("Spinner");
   });
 
-  test("should render loading spinner", () => {
+  test("should render loading spinner", async () => {
     const loginMutationMock = [
       {
         request: {
@@ -65,11 +66,7 @@ describe("some of testing to Login flow", () => {
             name: "marcos",
           },
         },
-        result: () => {
-          return {
-            data: createGameMock,
-          };
-        },
+        result: { data: createGameMock },
       },
     ];
 
@@ -80,8 +77,7 @@ describe("some of testing to Login flow", () => {
     input.first().simulate("change", mockEvent);
 
     const element = findByTestAttr(wrapper, "login-button");
-    element.first().simulate("click");
-
+    await element.first().simulate("click");
     // let spinner = findByTestAttr(wrapper, "login-spinner");
     // expect(spinner.type().name).toEqual("Spinner");
     expect(wrapper.children().debug()).toContain("Spinner");
