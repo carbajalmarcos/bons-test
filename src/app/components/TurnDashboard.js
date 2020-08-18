@@ -24,7 +24,7 @@ const TurnDashboard = ({ current, left, nextTurn }: Props) => {
         </div>
         <div className={turnDashboard.contentItem}>
           <p>LEFT</p>
-          <p>{left}</p>
+          <p data-test="turns-left">{left}</p>
         </div>
       </div>
       <input

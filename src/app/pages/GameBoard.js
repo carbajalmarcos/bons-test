@@ -45,7 +45,6 @@ const Gameboard = () => {
   }, [data]);
   //if data is undefined then redirect to login
   useEffect(() => {
-    console.log("la data :", data);
     if (!data) {
       history.push("/");
     } else {
