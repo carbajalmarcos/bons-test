@@ -1,11 +1,3 @@
-export type Game = {
-  id: string,
-  currentTurn: number,
-  maxTurns: number,
-  turnsLeft: number,
-  player: Player,
-  monster: Monster,
-};
 export type Entity = {
   id: string,
   name: string,
@@ -24,4 +16,12 @@ export type Player = Entity & {
 };
 export type Monster = Entity & {
   image: string,
+};
+export type Game = {
+  id: string,
+  currentTurn: number,
+  maxTurns: number,
+  turnsLeft: number,
+  player: Player,
+  monster: Monster,
 };

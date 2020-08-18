@@ -20,7 +20,7 @@ const TurnDashboard = ({ current, left, nextTurn }: Props) => {
         </div>
         <div className={turnDashboard.contentItem}>
           <p>PAST</p>
-          <p>{current === 0 ? "--" : current - 1}</p>
+          <p data-test="past-label">{current === 0 ? "--" : current - 1}</p>
         </div>
         <div className={turnDashboard.contentItem}>
           <p>LEFT</p>
@@ -32,6 +32,7 @@ const TurnDashboard = ({ current, left, nextTurn }: Props) => {
         type="button"
         value="END TURN"
         onClick={nextTurn}
+        data-test="next-button"
       />
     </div>
   );

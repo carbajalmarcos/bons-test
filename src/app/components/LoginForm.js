@@ -25,6 +25,7 @@ const LoginForm = ({ createGame }: Props) => {
             onChange={(e) => {
               setName(e.target.value);
             }}
+            data-test="login-name"
           />
           <input
             className={loginForm.buttonLets}
@@ -33,6 +34,7 @@ const LoginForm = ({ createGame }: Props) => {
             onClick={() => {
               if (name.trim().length !== 0) createGame(name);
             }}
+            data-test="login-button"
           />
         </div>
       </div>

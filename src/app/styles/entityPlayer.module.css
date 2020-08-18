@@ -40,10 +40,12 @@
   height: 100%;
   background-color: var(--second-gray);
   border-radius: var(--borders);
+  overflow: hidden;
 }
 .image img {
   max-width: 100%;
   min-width: 100%;
+  margin-bottom: -20px;
 }
 .shield {
   width: 40%;

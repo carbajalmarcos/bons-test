@@ -6,9 +6,3 @@ export const GET_GAME = gql`
     monsterEffect @client
   }
 `;
-
-// export const GET_MONSTER_EFFECT = gql`
-// query getMonsterEffect {
-// monsterEffect @client
-// }
-// `;

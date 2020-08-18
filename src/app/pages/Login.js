@@ -24,11 +24,17 @@ const Login = () => {
   }, [data, loading]);
 
   if (error) {
-    return <Modal content={<p>{error.message}</p>} onClose={handleOnclose} />;
+    return (
+      <Modal
+        content={<p>{error.message}</p>}
+        onClose={handleOnclose}
+        data-test="modal"
+      />
+    );
   }
   return (
     <>
-      {loading && <Spinner />}
+      {loading && <Spinner data-test="login-spinner" />}
       <LogingForm createGame={handleCreateGame} />;
     </>
   );

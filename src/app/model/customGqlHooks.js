@@ -24,5 +24,5 @@ export const useNextTurn = () => {
   });
 };
 export const useGetGame = () => {
-  return useQuery(GET_GAME, { errorPolicy: "ignore" });
+  return useQuery(GET_GAME);
 };

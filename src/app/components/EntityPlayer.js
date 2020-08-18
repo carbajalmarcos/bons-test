@@ -12,9 +12,11 @@ const EntityPlayer = ({ data }: Props) => {
   return (
     <div className={entityPlayer.container}>
       <div className={entityPlayer.healthPoints}>
-        <div className={entityPlayer.image}>{<img src={image} />}</div>
+        <div className={entityPlayer.image} data-test="image-box">
+          {image && <img src={image} />}
+        </div>
         <div className={entityPlayer.hpScore}>
-          <h3>{name}</h3>
+          <h3 data-test="entity-name">{name}</h3>
           <p>
             <span>HP:</span>
             {`${hp}/${maxHp}`}

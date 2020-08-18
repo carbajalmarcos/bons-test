@@ -14,6 +14,7 @@ const CardsBox = ({ cards, setCard, selected }: Props) => {
       {cards.map((value, index) => {
         return (
           <div
+            data-test="set-selected-card"
             className={
               selected !== value.id ? cardsBox.card : cardsBox.cardSelected
             }
