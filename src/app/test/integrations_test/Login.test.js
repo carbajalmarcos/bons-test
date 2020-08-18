@@ -56,7 +56,7 @@ describe("some of testing to Login flow", () => {
     expect(wrapper.children().debug()).not.toContain("Spinner");
   });
 
-  test("should render loading spinner", async () => {
+  test("should render loading spinner", () => {
     const loginMutationMock = [
       {
         request: {
@@ -76,7 +76,7 @@ describe("some of testing to Login flow", () => {
     input.first().simulate("change", mockEvent);
 
     const element = findByTestAttr(wrapper, "login-button");
-    await element.first().simulate("click");
+    element.first().simulate("click");
     // let spinner = findByTestAttr(wrapper, "login-spinner");
     // expect(spinner.type().name).toEqual("Spinner");
     expect(wrapper.children().debug()).toContain("Spinner");
