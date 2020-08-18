@@ -31,7 +31,7 @@ const setup = () => {
   );
 };
 
-describe("app flow", () => {
+describe("some of game flow tests", () => {
   test("checking load data", async () => {
     const wrapper = setup();
 

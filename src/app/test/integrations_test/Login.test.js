@@ -22,7 +22,7 @@ const setup = (mocks) => {
   );
 };
 
-describe("app flow", () => {
+describe("some of login flow test ", () => {
   test("name empty", () => {
     const loginMutationMock = [
       {
