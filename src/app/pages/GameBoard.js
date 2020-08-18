@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { useGetGame, useNextTurn } from "../model/customGqlHooks";
-import client from "../model/client";
+import { useGetGame, useNextTurn } from "../../model/customGqlHooks";
+import client from "../../model/client";
 import { useHistory } from "react-router-dom";
 import MaingGameBoard from "../components/MainGameBoard";
 import Modal from "../components/Modal";

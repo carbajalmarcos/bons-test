@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import LogingForm from "../components/LoginForm";
-import { useCreateGame } from "../model/customGqlHooks";
+import { useCreateGame } from "../../model/customGqlHooks";
 import { useHistory } from "react-router-dom";
 import Modal from "../components/Modal";
 import Spinner from "../components/Spinner";
